@@ -1,0 +1,25 @@
+en:
+  layouts:
+    mailer:
+      address: "411 Oxford Street"
+      postcode: "W1C2PE"
+      numan_website: "Numan Website"
+      terms_of_sale: "Terms of Sale"
+      privacy_policy: "Privacy Policy"
+      get_help: "Get help with subscriptions and other questions."
+      zen_desk: "Visit Numan Help Center."
+    mailer_v2:
+      address: "411 Oxford Street"
+      postcode: "W1C2PE"
+      numan_website: "Numan Website"
+      terms_of_sale: "Terms of Sale"
+      privacy_policy: "Privacy Policy"
+      get_help: "Get help with subscriptions and other questions."
+      zen_desk: "Visit Numan Help Center."
+    signatures:
+      gp_signature:
+        name: "Luke Pratsides"
+        role: "MBBS, MSc, MRCGP, MFCI, lead GP"
+      signature:
+        name: "Sophia Jones"
+        role: "Head of Customer Experience"

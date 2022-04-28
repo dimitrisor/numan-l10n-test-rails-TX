@@ -1,0 +1,103 @@
+en:
+  clinic_os:
+    patient:
+      create_order:
+        order_successfully_created: "Order successfully created"
+        order_will_await_confirmation: "A confirmation email has been sent to the patient. This order is awaiting confirmation from patient."
+    order:
+      prescription: "Prescription"
+      prescription_request: "Prescription request"
+      created_by:
+        clinician: "Clinician"
+        customer: "Patient"
+        admin: "Admin"
+      cancel:
+        order_cancelled: "Order cancelled"
+      cancellation_reasons:
+        not_worth_the_price: "Not worth the price"
+        too_expensive_for_me: "Too expensive for me"
+        issues_receiving_my_order: "Issues receiving my order"
+        not_used_all_medication: "Not used all medication"
+        medical_situation_changed: "Medical situation changed"
+        undesirable_side_effects: "Undesirable side effects"
+        other: "Other"
+        medication_didnt_work: "Medication didn't work"
+        its_too_expensive: "Its too expensive"
+        dont_need_any_more_medication: "Dont need any more medication"
+        delivery_time_was_too_slow: "Delivery time was too slow"
+        no_longer_need_treatment: "No longer need treatment"
+        didnt_realise_it_was_a_repeat_prescription: "Didn't realise it was a repeat prescription"
+        experienced_unwanted_side_effects: "Experienced unwanted side effects"
+        medical_situation_has_changed: "Medical situation has changed"
+        getting_the_same_treatment_elsewhere: "Getting the same treatment elsewhere"
+        switching_treatment_to_a_different_dose: "Switching treatment to a different dose"
+        switching_to_a_different_treatment: "Switching to a different treatment"
+        clinician_error: "Clinician error"
+      pause_reasons:
+        issues_receiving_my_order: "I had issues receiving my order"
+        too_expensive_for_me: "It is too expensive for me right now"
+        its_not_worth_the_price: "I do not think the product/service is worth the price"
+        undesirable_side_effects: "I have experienced undesirable side effects during my treatment"
+        medical_situation_has_changed: "My medical situation has changed"
+        receiving_treatment_elsewhere: "I am receiving treatment elsewhere "
+        not_used_all_my_medication: "I have not used all my medication"
+        medication_didnt_work: "The medication didn’t work"
+        its_too_expensive: "It’s too expensive"
+        dont_need_any_more_medication: "I don’t need any more medication"
+        delivery_time_was_too_slow: "The delivery time was too slow"
+        no_longer_need_treatment: "I no longer need treatment"
+        didnt_realise_it_was_a_repeat_prescription: "I didn’t realise it was a repeat prescription"
+        experienced_unwanted_side_effects: "I experienced unwanted side effects"
+        getting_the_same_treatment_elsewhere: "I am getting the same treatment elsewhere"
+        switching_treatment_to_a_different_dose: "I am switching my treatment to a different dose"
+        switching_to_a_different_treatment: "I am switching to a different treatment"
+        other: "Other"
+      consultation:
+        consultation_added: "Consultation added"
+        one_off_consultation_variant_not_found: >-
+          Unable to add consultation because a one-off consultation variant wasn't found
+    medical_test:
+      type:
+        erectile-dysfunction-test-kit: "ED Blood Test"
+        coronavirus-antibody-test: "COVID-19 Antibody Test"
+        vitamin-d-test-kit: "Vitamin D Test"
+        at-home-health-mot-biannual: "At Home Health MOT Test"
+        at-home-health-mot-one-off: "At Home Health MOT Test"
+        full-diagnostics-kit: "Full Diagnostics Kit"
+        fear-nothing-blood-test: "Fear Nothing Blood Test"
+      status:
+        draft: "Awaiting results"
+        sent: "Awaiting results"
+        processing: "Awaiting results"
+        completed: "Completed"
+        awaiting_review: "Awaiting review"
+        no_results: "No results"
+      consultation:
+        consultation_added: "Consultation added"
+        medical_test_not_found: "Medical test not found"
+        one_off_consultation_variant_not_found: >-
+          Unable to add consultation because a one-off consultation variant wasn't found
+    consultation:
+      cancel:
+        consultation_cancelled: "Consultation cancelled"
+      cancellation_reasons:
+        did_not_attend: "Did not attend"
+        no_clinician_available: "No clinician available"
+        rescheduled_by_numan: "Rescheduled by Numan"
+        reschedule_request_from_patient: "Reschedule request from patient"
+        customer_cancelled: "Customer cancelled"
+        other: "Other"
+    prescription:
+      order_link: "Order link"
+      created_by:
+        clinician: "Clinician"
+        customer: "Patient"
+      prescription_details:
+        patient_communication: "Patient Communication"
+    prescription_requests:
+      get_review_data:
+        can_not_approve_reject: "You can not approve or reject prescription request because it is not active"
+      review:
+        prescribed_number_of_repeats_required: "Prescribed number of repeats can't be blank"
+        request_approved: "You have approved the prescription request"
+        request_rejected: "You have rejected the prescription request"

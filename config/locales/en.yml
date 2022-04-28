@@ -1,0 +1,563 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  messages:
+    not_acceptable_request_format: "Request format was not acceptable."
+    not_acceptable: "Not acceptable"
+    throtle: "Throttled"
+    throtle_detail: "Throttle limit reached. Retry after %{sec} seconds"
+  models:
+    consultations:
+      unique_validation_message: "Cannot create a new Consultation because there is already one created with same values"
+  controllers:
+    v1:
+      subscriptions:
+        active_subscription: "We are unable to process more than one request for a prescription for the same medication. If you have any questions, please contact us at help@numan.com."
+      prescription_requests:
+        approve_or_reject: "review_action must be 'approve' or 'reject' "
+      deliveries:
+        sent_at_required: "Sent at can't be blank"
+      consultations:
+        token_blank_or_invalid: "Access token is missing or invalid"
+        appointment_not_found: "Appointment record not found"
+        unexpected_error: 'Unexpected Error'
+      registrations:
+        potential_duplicate_account: "There is already an account with the same first name, last name and date of birth. Please contact customer support to resolve this issue."
+        invalid_date_of_birth: "Please enter a valid date."
+  services:
+    eshop:
+      subscriptions:
+        update:
+          invalid_status: "Can not update a subscription with status %{subscription_status}"
+        cancellation_reason_text_required: "Cancellation reason text is required if reason is 'Other'"
+        pause_reason_text_required: "Pause reason text is required if reason is 'Other'"
+        pause_subscription_repeat_id_not_valid: "Subscription Repeat does not exist"
+        pause_subscription_repeat_id_is_the_last: "Can not skip subscription repeats to this repeat because it's the last one"
+        send_now_subscription_not_paused: "Can not send one repeat if subscription has status %{status}"
+        send_now_subscription_no_skipped_repeats: "Can not send repeat because there are no Skipped repeats in the future"
+        send_now_subscription_scheduled_at_nil: "Scheduled at date is empty or has invalid format"
+        send_now_subscription_scheduled_at_in_the_past: "Scheduled at date must be equal or greater than today"
+        send_now_subscription_scheduled_at_less_than_minimum_next_delivery_date: "Scheduled at date must be equal or greater than %{minimum_next_delivery_date}"
+        send_now_subscription_already_asked: "Can not send repeat because there are already open deliveries or repeats with failed payments"
+        change_scheduled_at_subscription_repeats_scheduled_at_nil: "Scheduled at date is empty or has invalid format"
+        change_scheduled_at_subscription_repeats_in_the_past: "Scheduled at date must be equal or greater than today"
+        change_scheduled_at_subscription_repeats_repeat_not_found: "Subscription repeat can not be found"
+        change_scheduled_at_subscription_repeats_scheduled_forbidden: "Access to this subscription repeat is forbidden"
+        change_scheduled_at_subscription_repeats_not_active_pending: "Can not reschedule subscription repeat with status %{status}"
+        create_addon_subscription_not_eligible_status: "Can not add a addon subscription if the initial subscription has status %{status}"
+        create_addon_subscription_not_eligible_not_same_variant: "Can not use that product variant addon because they do not have the same product variant with the parent subscription"
+        create_addon_subscription_user_needs_to_be_admin: "User needs to be Admin to perform this action"
+        payment_method_and_user_can_not_be_saved: "This combination of payment method and user can not be saved"
+        shipping_address_and_user_can_not_be_saved: "This combination of shipping address and user can not be saved"
+        repeat_with_status_processing_missing: "Can not find repeats with status processing for the subscription: %{subscription_id}"
+        create_rescheduled_order_prescription_request_id_missing: "Prescription request ID must be present when subscription requires a prescription"
+        create_rescheduled_order_prescriber_id_missing: "Prescriber ID must be present when subscription requires a prescription"
+        repeat_with_status_pending_verification_missing: "Can not find repeats with status pending_verification"
+        repeat_not_eligible_for_rescheduled_order: "Subscription Repeat is not eligible for requesting a rescheduled order"
+        tag_must_be_present: "Tag must be present"
+        prescription_required: "Cannot create a subscription, this product requires a valid prescription id"
+        cant_add_empty_tag_to_subscription_repeat: "Can't add an empty tag to a subscription repeat"
+        cant_add_unexpected_type_tag_to_subscription_repeat: "Can't add unexpected type of tag to subscription repeat"
+        cant_add_unexpected_type_tag_to_subscription: "Can't add unexpected type of tag to subscription"
+        add_coupon_to_subscription_and_redeem_it_coupon_applied: "Coupon has been already applied to the subscription"
+        add_coupon_to_subscription_and_redeem_it_wrong_subscription_status: "Can not add a coupon to a subscription with status %{status}"
+        subscription_confirm_by_customer_wrong_subscription_status: "Can not confirm a subscription with status %{status} if it's created by a Clinician"
+        create_repeats_prescription_id_missing: "Prescription ID must be present when subscription requires a prescription in order to create repeats"
+        create_non_draft_subscription_unsupported_status: 'Cannot create a non draft subscription with status other than active or pending_confirmation'
+      accounts:
+        token_can_not_be_blank: "Token can't be blank"
+        token_can_not_be_found: "Token can not be found"
+        token_not_valid: "Token is not valid"
+        verification:
+          status_not_valid: "Verification status not valid or is missing. Status: %{verification_status}"
+          cannot_verify_already_confirmed: "Cannot verify customer: Verification already confirmed"
+          cannot_verify_unexpected_status: "Cannot verify customer: Current verification status is unexpected"
+      coupons:
+        general_error_on_apply: "There was an error applying the coupon"
+        product_variant_does_not_exist: "Product Variant does not exist"
+        product_variant_ids_wrong_type: "Wrong argument, `product_variant_ids` must be an Array"
+    payment_methods:
+        anonymize_invalid_state: "All subscriptions must be in a final state before anonymizing this payment method"
+    analytics:
+      analytics:
+        cancellation_reasons:
+          not_worth_the_price: "It is not worth the price"
+          too_expensive_for_me: "It’s too expensive for me"
+          issues_receiving_my_order: "I had issues receiving my order"
+          not_used_all_medication: "I have not used up all of my medication"
+          medical_situation_changed: "My medical situation has changed"
+          undesirable_side_effects: "I experienced undesirable side effects"
+          medication_didnt_work: "The medication didn’t work"
+          its_too_expensive: "It’s too expensive"
+          dont_need_any_more_medication: "I don’t need any more medication"
+          delivery_time_was_too_slow: "The delivery time was too slow"
+          no_longer_need_treatment: "I no longer need treatment"
+          didnt_realise_it_was_a_repeat_prescription: "I didn’t realise it was a repeat prescription"
+          experienced_unwanted_side_effects: "I experienced unwanted side effects"
+          medical_situation_has_changed: "My medical situation has changed"
+          getting_the_same_treatment_elsewhere: "I am getting the same treatment elsewhere"
+          switching_treatment_to_a_different_dose: "I am switching my treatment to a different dose"
+          switching_to_a_different_treatment: "I am switching to a different treatment"
+          other: "Other"
+    drugstore:
+      deliveries:
+        can_not_mark_as_sent: "You can not mark as sent the delivery because it is not active or scheduled"
+        can_not_mark_as_sent_it_belong_to_batch: "You can not mark as sent the delivery because it belongs to a batch"
+        can_not_add_to_batch_not_found: "You can not add this delivery to the batch because it can not be found"
+        can_not_add_to_batch_wrong_status: "You can not add this delivery to the batch because it is not active or scheduled"
+        can_not_add_to_batch_already_added: "You can not add this delivery to the batch because it is already added to this batch"
+        can_not_add_to_batch_belongs_to_batch: "You can not add this delivery to the batch because it belongs to another batch"
+        can_not_add_to_batch_forbidden: "Access to this delivery is forbidden"
+        can_not_add_to_batch_completed: "You can not add this delivery to the batch because batch is completed"
+        can_not_remove_from_batch_not_in_batch: "You can not remove this delivery because it does not belong to the batch"
+        can_not_remove_deliveries_from_batch_not_in_batch: "You can not remove the deliveries because they don't belong to the batch"
+        can_not_remove_from_batch_completed: "You can not remove this delivery because batch is completed"
+        can_not_remove_from_batch_sent: "You can not remove this delivery from batch because it is sent"
+        can_not_remove_deliveries_from_batch_sent: "You can not remove the deliveries from batch because it is sent"
+        can_not_mark_as_sent_completed: "You can not mark the deliveries in this batch as sent because it is completed"
+    clinic:
+      prescriptions:
+        prescription_exist: "There is already a prescription for this subscription"
+        prescription_request_risk_changed_to_high: "Prescription request risk value changed from low to high"
+      consultations:
+        actions:
+          create:
+            errors:
+              has_active_consultation:
+                error_message: "You can not create another consultation because an active one already exists"
+              unexpected_source_type:
+                error_message: "Unexpected source_type"
+              inactive_subscription:
+                error_message: "You can not create a consultation because the subscription is not active"
+              source_type_not_subscription:
+                error_message: "You can not create a consultation because the source type is not subscription"
+              missing_processing_repeat:
+                error_message: "You can not create a consultation because we can not find a repeat with status processing"
+          complete:
+            errors:
+              can_not_complete:
+                error_message: "You can not complete this Consultation because its status is not allowed for completion"
+              started_at_blank:
+                error_message: "'Started at' is required when completing a Consultation"
+              completed_at_blank:
+                error_message: "'Completed at' is required when completing a Consultation"
+          cancel:
+            errors:
+              can_not_cancel:
+                error_message: "You can not cancel this Consultation because its status is not allowed for cancellation"
+          confirm_cancellation:
+            errors:
+              can_not_confirm_cancellation:
+                error_message: "You can not confirm this Consultation's cancellation because its status is not allowed for cancellation confirmation"
+              cancellation_confirmed_at_blank:
+                error_message: "'Cancellation confirmed at' is required when cancelling a Consultation"
+          confirm_booking:
+            errors:
+              can_not_confirm_booking:
+                error_message: "You can not confirm this Consultation's booking because its status is not allowed for booking"
+              booking_confirmed_at_blank:
+                error_message: "'Booking confirmed at' is required when booking a Consultation"
+              external_id_blank:
+                error_message: "'External ID' is required when booking a Consultation"
+          cancel_by_doctor:
+            errors:
+              can_not_cancel:
+                error_message: "You can not cancel this Consultation because its status is not allowed for cancellation"
+              cancellation_reason_text_required:
+                error_message: "Cancellation reason text is required if reason is 'Other'"
+          complete_by_doctor:
+            errors:
+              can_not_complete:
+                error_message: "You can not complete this Consultation because its status is not allowed for completion"
+              started_at_blank:
+                error_message: "'Started at' is required when completing a Consultation"
+              completed_at_blank:
+                error_message: "'Completed at' is required when completing a Consultation"
+              notes_from_doctor_blank:
+                error_message: "'Notes from doctor' is required when completing a Consultation"
+              doctor_gmc_number_blank:
+                error_message: "'GMC number' is required when completing a Consultation"
+              first_name_blank:
+                error_message: "'First name' is required when completing a Consultation"
+              last_name_blank:
+                error_message: "'Last name' is required when completing a Consultation"
+      medical_tests:
+        actions:
+          add_medical_test_receipt:
+            errors:
+              can_not_add_medical_test_receipt:
+                error_message: "You can not add a Receipt for this MedicalTest because its status is not allowed for adding a receipt"
+              receipt_raw_blank:
+                error_message: "'Receipt Raw' is required when adding a MedicalTest receipt"
+              receipt_blank:
+                error_message: "'Receipt' is required when adding a MedicalTest receipt"
+          add_medical_test_results:
+            errors:
+              can_not_add_medical_test_results:
+                error_message: "You can not add results for this MedicalTest because its status is not allowed for adding results"
+              results_raw_blank:
+                error_message: "'Results Raw' is required when adding a MedicalTest results"
+              results_blank:
+                error_message: "'Results' is required when adding a MedicalTest results"
+    integrations:
+      appointments:
+        notes:
+          prescriptions_title: "Prescriptions"
+          prescription_details: "%{status} Prescription in category %{product_category_name} in product %{product_name} %{product_variant_name} with %{prescribed_frequency} frequency and %{prescribed_number_of_repeats} repeats"
+          medical_tests_title: "Medical tests"
+          none: "None"
+      verifications:
+        unexpected_verification_result: "%{verification_result} is not an expected result for verification"
+    clinic_os:
+      prescription_request:
+        risk_assessment:
+          high:
+            patient_rejected_prescription_request: '%{number} previously rejected request/s'
+            questionnaire_query_required: 'Questionnaire query required'
+            questionnaire_revision: 'Legacy questionnaire'
+            questionnaire_version: 'Questionnaire version is not latest'
+            is_rescheduled_order: 'Request is for rescheduled order'
+            patient_age: 'Patient age is not within product variant intended age'
+            patient_assigned_sex: 'Patient assigned sex does not match variant intended assigned sex'
+            is_high_risk_dosage: 'Product variant has a high risk dosage'
+            same_category_active_subscriptions: '%{number} active subscriptions in the same category'
+          low:
+            patient_rejected_prescription_request: '0 previously rejected requests'
+            questionnaire_query_required: 'No questionnaire query required'
+            questionnaire_revision: 'Smart questionnaire'
+            questionnaire_version: 'Questionnaire version is latest'
+            is_rescheduled_order: 'Request is not for rescheduled order'
+            patient_age: 'Patient age is within product variant intended age'
+            patient_assigned_sex: 'Patient assigned sex matches variant intended assigned sex'
+            is_high_risk_dosage: 'Product variant has a low risk dosage'
+            same_category_active_subscriptions: '0 active subscriptions in the same category'
+    payments:
+      payment_processors:
+        quickpay:
+          subscription_is_retented: 'Validation error: Subscription is retented'
+  errors:
+    unauthenticated:
+      title: 'Not authenticated'
+      detail: 'User is not authenticated'
+    forbidden:
+      title: 'Forbidden'
+      detail: 'User is not authorised'
+    invalid_token:
+      title: 'Invalid access token'
+      detail: 'Access token is missing or invalid'
+    unexpected:
+      title: 'Unexpected Error'
+      detail: 'There is an unexpected error'
+    customer_not_found:
+      title: 'Record Not Found'
+      detail: 'Customer does not exist'
+    prescription_not_found:
+      title: 'Record Not Found'
+      detail: 'Prescription does not exist'
+    product_variant_not_found:
+      title: 'Record Not Found'
+      detail: 'Product variant does not exist'
+    questionnaire_invalid:
+      title: 'Questionnaire Invalid'
+      detail: 'Cannot complete subscription flow with invalid questionnaire'
+    subscription_not_found:
+      title: 'Record Not Found'
+      detail: 'Subscription does not exist'
+    product_category_not_found:
+      title: 'Record Not Found'
+      detail: 'Product category does not exist'
+    addon_subscription_incorrect_price:
+      title: 'Subscription Error'
+      detail: "Addon subscription price cannot be less than 0 or more than the original product variant price"
+    addon_subscription_not_eligible_status:
+      title: "Subscription Error"
+      detail: "Cannot add an addon subscription if the initial subscription has status %{status}"
+    addon_subscription_product_variant_requires_prescription:
+      title: "Subscription Error"
+      detail: "Cannot create subscription, the product variant requires a prescription"
+    subscription_with_missing_product_variant_id:
+      title: "Subscription Error"
+      detail: "Cannot create subscription, requires a product variant configuration when configuration_id is present."
+    subscription_with_billing_frequency_missing_variant_config:
+      title: "Subscription Error"
+      detail: "Cannot create subscription, requires a product variant configuration when billing_frequency is present."
+    subscription_with_billing_frequency_missing_product_variant_id:
+      title: "Subscription Error"
+      detail: "Cannot create subscription, requires a product variant id when billing_frequency is present."
+    prescription_not_available_for_not_prescription_based_products:
+      title: "Unprocessable Entity"
+      detail: "Cannot create a prescription for a product that does not require a prescription"
+    delivery_not_found:
+      title: 'Record Not Found'
+      detail: 'Delivery does not exist'
+    delivery_batch_not_found:
+      title: 'Record Not Found'
+      detail: 'DeliveryBatch does not exist'
+    delivery_batch_forbidden:
+      title: 'Access to this delivery batch is forbidden'
+      detail: 'DeliveryBatch is not authorized'
+    delivery_batch_invalid_completed:
+      title: 'Invalid DeliveryBatch'
+      detail: 'You can not remove the deliveries because batch is completed'
+    delivery_batch_invalid_delivery_invalid:
+      title: 'Invalid DeliveryBatch'
+      detail: 'You can not remove the deliveries because the deliveries are not in this batch'
+    delivery_batch_invalid_delivery_sent:
+      title: 'Invalid DeliveryBatch'
+      detail: 'You can not remove this delivery because the delivery is sent'
+    delivery_incorrect_status:
+      title: 'Delivery Error'
+      detail: 'Delivery has an invalid status'
+    delivery_cannot_be_cancelled:
+      title: 'Delivery Error'
+      detail: 'Cannot cancel a delivery that is not scheduled or the subscription is not cancelled or paused'
+    subscription_repeat_not_found:
+      title: 'Subscription repeat Error'
+      detail: 'Subscription repeat does not exist'
+    delivery_cancellation_confirmation_error:
+      title: 'Delivery Error'
+      detail: 'Delivery cancellation request failed to be confirmed by the PMR'
+    payment_method_not_found:
+      title: 'Payment method Error'
+      detail: 'Payment method does not exist'
+    payment_method_record_invalid:
+      title: 'Invalid PaymentMethod'
+      detail: 'PaymentMethod has missing or invalid attributes'
+    payment_method_deletion_request_at_date_invalid:
+      title: 'Invalid PaymentMethod anonymization request date'
+      detail: 'The anonymization request date need to be from the %{created_at} up to today.'
+    adyen_payment_error:
+      title: 'Adyen payment Error'
+      detail: 'An error occurred using Adyen payments'
+    undefined_not_found_error:
+      title: 'Record Not Found'
+      detail: "%{klass} does not exist"
+    consultation_not_available_slot:
+      title: 'Slot for consultation not available'
+      detail: 'Cannot book consultation. Slot not available'
+    customer_billing_address_exists:
+      title: 'Customer has billing address defined'
+      detail: 'Cannot create billing address. Customer has billing address defined'
+    failed_to_create_subscription_from_pre_puchase_addon:
+      title: 'Failed to create a subscription from a pre purchase addon'
+      detail: 'There was an error while creating a subscription using variant from a pre purchase addon'
+    subscription_must_be_draft_to_delete_pre_purchase_addon:
+      title: 'The subscription must be in draft status'
+      detail: 'Cannot delete a pre purchase addon if the subscription is not in draft status'
+    pre_purchase_addon_not_found:
+      title: 'Pre purchase addon Error'
+      detail: 'Pre purchase addon does not exist'
+    adyen_charge_not_found:
+      title: 'Adyen charge not found'
+      detail: 'Adyen payment reference not found'
+    quickpay_charge_not_found:
+      title: 'Quickpay charge not found'
+      detail: 'Quickpay charge not found'
+    quickpay_charge_error:
+      title: 'Quickpay charge not valid'
+      detail: 'Quickpay charge could not be processed'
+    payment_method_subscription_status_invalid:
+      title: 'The payment method could not be anonymised.'
+      detail: 'Please ensure ALL subscriptions are in a valid state before anonymising the payment. Valid states are: ‘draft’, ‘completed’, ‘cancelled’ ‘rejected_by_reviewer’, ‘rejected_automatically’, ‘parent_rejected_by_reviewer’.'
+    medical_test_creation_failed:
+      title: 'Medical Test creation failed'
+      detail: 'Creation of Medical Test in the external system failed.'
+    ensure_user_failed:
+      title: 'Ensure User failed'
+      detail: 'Ensure User in the external system failed.'
+    event_record_invalid:
+      title: 'Invalid Event'
+      detail: 'Event has missing or invalid attributes'
+    payment_method_missing_recurring_token:
+      title: 'Payment method error'
+      detail: 'Payment recurring token missing'
+    subcription_repeat_refund_record_invalid:
+      title: 'Invalid Subscription Repeat Refund'
+      detail: 'Subscription Repeat Refund has missing or invalid attributes'
+    subcription_repeat_refund_argument_error:
+      title: 'Subscription Repeat Refund Error'
+      detail: 'Subscription Repeat Refund has invalid arguments'
+    cant_complete_subscription_with_existing_active_customer_subscription:
+      title: 'Complete subscription error'
+      detail: "Can't complete customer created subscription. Active subscriptions, created by the customer, are blocking the creation"
+    update_user_externally_failed:
+      title: 'Update User failed'
+      detail: 'Update User in the external system failed.'
+    delivery_not_found_by_source:
+      title: 'Delivery not found by source'
+      detail: 'Cannot find a delivery by the specific source_id'
+    duplicate_delivery_by_source:
+      title: 'Duplicate delivery by source'
+      detail: 'Delivery was not created as one already exists with for this source'
+    product_sku_not_found:
+      title: 'Record not found'
+      detail: 'Product sku does not exist'
+    product_sku_record_invalid:
+      title: 'Invalid Product SKU'
+      detail: 'Product SKU has missing or invalid attributes'
+    duplicate_charge_by_source:
+      title: 'Duplicate charge by source'
+      detail: 'Charge was not created as one already exists with for this source in status `draft` or `completed`'
+    prescriber_record_invalid:
+      title: 'Invalid Prescriber'
+      detail: 'Prescriber has missing or invalid attributes'
+    prescriber_not_found:
+      title: 'Record not found'
+      detail: 'Prescriber does not exist'
+    charge_refund_record_invalid:
+      title: 'Charge refund record invalid'
+      detail: 'Charge refund has invalid arguments'
+    invalid_charge_refund_amount:
+      title: 'Invalid Charge Refund Amount'
+      detail: 'The charge refund amount is greater than the remaining refundable amount.'
+    charge_record_not_found:
+      title: 'Charge record not found'
+      detail: 'Charge does not exist'
+    invalid_charge_status:
+      title: 'Invalid charge status'
+      detail: 'The status of the charge should be `completed`'
+    adyen_refund_error:
+      title: 'Adyen refund Error'
+      detail: 'An error occurred using Adyen refunds'
+    invalid_prescription_requests_page_size:
+      title: 'Invalid prescription requests page size'
+      detail: '1000 is the maximum permitted page size'
+    charge_refund_record_not_found:
+      title: 'Charge refund record not found'
+      detail: 'Charge refund does not exist'
+    invalid_pub_sub_event:
+      title: 'Invalid pub sub event'
+      detail: 'Missing required origin, id or published_at. Or given data is not a hash'
+    invalid_pub_sub_event_data:
+      title: 'Invalid pub sub event data'
+      detail: 'Invalid pub sub event data %{event_data}'
+    subscription_expired:
+      title: 'Subscription is expired'
+      detail: 'Subscription is expired'
+    invalid_repeat_status:
+      title: 'Invalid repeat status'
+      detail: 'The status of the repeat should be `active`'
+    subscription_repeat_cannot_be_manually_charged:
+      title: 'Subscription repeat cannot be charged'
+      detail: 'Subscription repeat cannot be charged. Scheduled date should be up to %{billing_days} from today'
+    pause_reason_not_found:
+      title: 'Pause reason not found'
+      detail: 'Pause reason does not exist for this category'
+    medical_test_required_in_delivery_data:
+      title: 'Medical Test required in delivery data'
+      detail: 'Delivery data must contain a medical test in order to request drugstore delivery'
+    visit_case_creation_failed:
+      title: 'Cannot create consultation'
+      detail: 'Creation of Visit Case in the external system failed'
+    inactive_subscription:
+      title: 'Cannot create consultation'
+      detail: 'You can not create a consultation because the subscription is not `active`'
+    missing_processing_repeat:
+      title: 'Cannot create consultation'
+      detail: 'You can not create a consultation because we can not find a repeat with status `processing`'
+    source_type_not_subscription:
+      title: 'Cannot create consultation'
+      detail: 'You can not create a consultation because the source type is not `subscription`'
+    pause_reason_not_valid:
+      title: 'Pause reason not valid'
+      detail: 'You can not create a pause this subscription because the pause reason is not valid for this category'
+    adyen_cancel_or_refund_error:
+      title: 'Adyen cancellation or refund error'
+      detail: 'An error occurred using Adyen request to cancel or refund'
+    pause_reason_record_invalid:
+      title: 'Invalid Pause Reason'
+      detail: 'Pause Reason has missing or invalid attributes'
+    pharmacist_record_invalid:
+      title: 'Invalid Pharmacist'
+      detail: 'Pharmacist has missing or invalid attributes'
+    pharmacy_not_found:
+      title: 'Record not found'
+      detail: 'Pharmacy does not exist'
+    pharmacist_not_found:
+      title: 'Record not found'
+      detail: 'Pharmacist does not exist'
+  devise:
+    failure:
+      not_approved: "Your account has not been approved by your administrator yet."
+  renews:
+    frequency:
+      one: "Monthly"
+      other: "Every %{frequency} months"
+  billing_frequency:
+    month:
+      one: "month"
+      other: "months"
+  product_variants:
+    unit:
+      tablet:
+        one: "tablet"
+        other: "tablets"
+      capsule:
+        one: "capsule"
+        other: "capsules"
+      wipe:
+        one: "wipe"
+        other: "wipes"
+      bottle:
+        one: "bottle"
+        other: "bottles"
+      kit:
+        one: "kit"
+        other: "kits"
+      consultation:
+        one: "consultation"
+        other: "consultations"
+      vape:
+        one: "vape"
+        other: "vapes"
+      condom:
+        one: "condom"
+        other: "condoms"
+      inhaler:
+        one: "inhaler"
+        other: "inhalers"
+      pack:
+        one: "pack"
+        other: "packs"
+      "treatment plan":
+        one: "treatment plan"
+        other: "treatment plans"
+      spacer:
+        one: "spacer"
+        other: "spacers"
+      "peak flow meter":
+        one: "peak flow meter"
+        other: "peak flow meters"
+      dose:
+        one: "dose"
+        other: "doses"

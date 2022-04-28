@@ -1,0 +1,8 @@
+en:
+  mailer_helper:
+    switching_treatment_to_a_different_dose: A member of our team has cancelled your order as we are changing the dose of your medication.
+    switching_to_a_different_treatment: A member of our team has cancelled your order as we are changing your medication.
+    clinician_error: A member of our team has cancelled your order as it was created in error.
+    user_specified_reasons: A member of our team has cancelled your order as per your request.
+    clinical_reasons: A member of our team has cancelled your order.
+    default_reason: A member of our team has cancelled your order.

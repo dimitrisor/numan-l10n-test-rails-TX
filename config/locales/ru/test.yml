@@ -24,6 +24,6 @@ ru:
     posted_by: "Автор: %{author}"
   static_pages:
     index:
-      welcome: "Добро пожаловать!!!"
+      welcome: "Добро пожаловать!!!123"
       services_html: "Мы предоставляем услуги для <em>хороших людей</em>."
       page_title: "BLABLABLA 123"

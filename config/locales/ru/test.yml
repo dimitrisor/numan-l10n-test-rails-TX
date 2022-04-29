@@ -22,7 +22,6 @@ ru:
     new:
       title: "Отзывы"
     posted_by: "Автор: %{author}"
-    
   static_pages:
     index:
       welcome: "Добро пожаловать! 12 12 "

@@ -20,7 +20,6 @@ en_GB:
     new:
       title: "Feedback"
     posted_by: "Posted by %{author}"
-    
   static_pages:
     index:
       welcome: "Welcome!"

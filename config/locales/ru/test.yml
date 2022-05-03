@@ -22,3 +22,8 @@ ru:
     new:
       title: "Отзывы"
     posted_by: "Автор: %{author}"
+  static_pages:
+    index:
+      welcome: "добро пожаловать"
+      services_html: "Мы предоставляем некоторые модные услуги <em>хорошим людям</em>."
+      page_title: "Как дела сегодня333??"

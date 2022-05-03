@@ -22,8 +22,8 @@ ru:
     new:
       title: "Отзывы"
     posted_by: "Автор: %{author}"
-  static_pages:
-    index:
-      welcome: "Добро пожаловать!!!12345 6789"
-      services_html: "Мы предоставляем услуги для <em>хороших людей</em>."
-      page_title: "BLABLABLA 12"
+#  static_pages:
+#    index:
+#      welcome: "Добро пожаловать!!!12345 6789"
+#      services_html: "Мы предоставляем услуги для <em>хороших людей</em>."
+#      page_title: "BLABLABLA 12"
